@@ -25,6 +25,7 @@ def main():
         e6 = Enemy6()
         score = Score()
         clock = pygame.time.Clock()
+        SPEED = 60
 
         # MUSIC
 
@@ -50,6 +51,7 @@ def main():
                 score.update()
                 ScoreNumber = ScoreText.render(str("SCORE: "+ str(math.floor(score.score_value * 100) / 100)), True, COLORLIST[1])
                 HNum = ScoreText.render("Health: " + str(hero.kill), True, COLORLIST[3])
+                SNum = ScoreText.render("Speed: " + str(SPEED), True, COLORLIST[3])
                 for event in events:
                         #Keyboard input#
                         if event.type == QUIT:
@@ -70,6 +72,30 @@ def main():
                                         global TOTAL_SCORE
                                         TOTAL_SCORE = int(math.floor(score.score_value))
                                         return
+                                if event.key == K_UP:
+                                        SPEED += 1
+                                if event.key == K_DOWN:
+                                        SPEED -= 1
+                                if event.key == K_1:
+                                        SPEED = 60
+                                if event.key == K_2:
+                                        SPEED = 40
+                                if event.key == K_3:
+                                        SPEED = 50
+                                if event.key == K_4:
+                                        SPEED = 70
+                                if event.key == K_5:
+                                        SPEED = 80
+                                if event.key == K_6:
+                                        SPEED = 90
+                                if event.key == K_7:
+                                        SPEED = 100
+                                if event.key == K_8:
+                                        SPEED = 30
+                                if event.key == K_9:
+                                        SPEED = 20
+                                if event.key == K_0:
+                                        SPEED = 1
                         if event.type == KEYUP:
                                 if event.key == K_w:
                                         hero.Fall()
@@ -102,8 +128,9 @@ def main():
                 hero.show()
                 screen.blit(ScoreNumber, (0, 0))
                 screen.blit(HNum, (0, 30))
+                screen.blit(SNum, (0, 60))
                 #screen.blit(HealthNumber, (250, 0))
-                clock.tick(60)
+                clock.tick(int(SPEED))
                 pygame.display.update()
 
 def rule_screen():
