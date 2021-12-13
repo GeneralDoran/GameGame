@@ -103,7 +103,7 @@ def main():
                 screen.blit(ScoreNumber, (0, 0))
                 screen.blit(HNum, (0, 30))
                 #screen.blit(HealthNumber, (250, 0))
-                clock.tick(40)
+                clock.tick(60)
                 pygame.display.update()
 
 def rule_screen():
