@@ -51,7 +51,7 @@ def main():
                 score.update()
                 ScoreNumber = ScoreText.render(str("SCORE: "+ str(math.floor(score.score_value * 100) / 100)), True, COLORLIST[1])
                 HNum = ScoreText.render("Health: " + str(hero.kill), True, COLORLIST[3])
-                SNum = ScoreText.render("Speed: " + str(SPEED), True, COLORLIST[3])
+                SNum = ScoreText.render("Speed: " + str(SPEED), True, COLORLIST[5])
                 for event in events:
                         #Keyboard input#
                         if event.type == QUIT:
