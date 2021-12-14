@@ -244,6 +244,19 @@ def endScreen():
                                 elif event.key == K_r:
                                         mixer.music.stop()
                                         GameGame()
+                                if event.key == K_1:
+                                    mixer.music.load("YYhY.6.0.mp3")
+                                    mixer.music.set_volume(25)
+                                    mixer.music.play()
+                                if event.key == K_2:
+                                    mixer.music.load("AnotherSong.4.9.mp3")
+                                    mixer.music.set_volume(2)
+                                    mixer.music.play()
+                                if event.key == K_3:
+                                    mixer.music.load("LP.mp3")
+                                    mixer.music.set_volume(0.5)
+                                    mixer.music.play()
+
                 if end.score_value > 10000:
                         return
                 #Showing Images to Screen#
@@ -265,18 +278,3 @@ def GameGame():
 
 if __name__ == '__main__':
         GameGame()
-
-
-                        
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
